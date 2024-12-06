@@ -1,0 +1,335 @@
+/* Global Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to bottom, #87CEEB, #1E90FF); 
+    color: white;
+    text-align: center;
+    transition: background-color 0.3s ease; 
+    display: flex;
+    flex-direction: column;
+}
+
+/* Header Section */
+header {
+    padding: 30px 20px;
+    background: rgba(0, 0, 0, 0.5); 
+    border-bottom: 3px solid #1E90FF;
+    animation: fadeIn 1s ease-in-out;
+}
+
+
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+.header-content {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+header h1 {
+    font-size: 3em;
+    margin-bottom: 10px;
+    font-weight: bold;
+    transition: transform 0.3s ease-in-out;
+}
+
+header p {
+    font-size: 1.3em;
+    margin-bottom: 20px;
+    line-height: 1.5;
+}
+
+/* Start Quiz Button */
+button {
+    background: #1c75cf;
+    border: none;
+    padding: 15px 30px;
+    color: white;
+    font-size: 1.5em;
+    cursor: pointer;
+    border-radius: 10px;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+    background: #15466e;
+    transform: scale(1.1);
+}
+
+button:focus {
+    outline: none;
+}
+
+/* Quiz Container */
+#quiz-container {
+    padding: 20px;
+    margin-top: 20px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    opacity: 0;
+    animation: fadeIn 1s ease-out forwards; 
+}
+
+/* Options Container */
+.options-container {
+    display: flex;
+    flex-direction: column; 
+    gap: 15px; 
+    align-items: center; 
+    justify-content: center; 
+    animation: fadeIn 1s ease-in-out 0.5s forwards; 
+}
+
+.option {
+    background: #11426a;
+    border: none;
+    padding: 15px 30px;
+    color: white;
+    font-size: 1.2em;
+    cursor: pointer;
+    width: 80%; 
+    border-radius: 8px;
+    transition: background 0.3s ease, transform 0.2s ease;
+    text-align: center; 
+}
+
+.option:hover {
+    background: #5A9BD5; 
+    transform: scale(1.05); 
+}
+
+.option:focus {
+    outline: none;
+}
+
+/* Footer */
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    padding: 10px 0;
+    background: #1E90FF;
+    text-align: center;
+    font-size: 0.9em;
+    color: white;
+    border-top: 3px solid #4682B4;
+    animation: fadeIn 1s ease-in-out 1.5s forwards; 
+}
+
+/* Footer text */
+footer p {
+    margin: 0;
+}
+
+/* Media Query for smaller screens */
+@media (max-width: 600px) {
+    .option {
+        width: 90%; 
+    }
+}
+
+
+/* Add fade-in and fade-out animations */
+.fade-out {
+    animation: fadeOut 0.3s forwards;
+}
+
+.fade-in {
+    animation: fadeIn 0.3s forwards;
+}
+
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+#quiz-header {
+    background-image: url('img/Ocean-Background-Horizontal.jpg'); 
+    background-size: cover; 
+    background-position: center; 
+    color: white; 
+    padding: 50px;
+    text-align: center; 
+    border-radius: 8px; 
+  }
+  
+  /* Style for the start button */
+  #start-button {
+    padding: 15px 30px;
+    background-color: rgba(0, 0, 0, 0.5);
+    border: none;
+    color: white;
+    body {
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(to bottom, #87CEEB, #1E90FF); 
+      color: white;
+      text-align: center;
+      transition: background-color 0.3s ease; 
+    }
+    
+    /* Header Section */
+    header {
+      padding: 30px 20px;
+      background: rgba(0, 0, 0, 0.5); 
+      border-bottom: 3px solid #1E90FF;
+      animation: fadeIn 1s ease-in-out;
+    }
+    
+    /* Smooth fade-in animation */
+    @keyframes fadeIn {
+      0% { opacity: 0; }
+      100% { opacity: 1; }
+    }
+    
+    .header-content {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    
+    header h1 {
+      font-size: 3em;
+      margin-bottom: 10px;
+      font-weight: bold;
+      transition: transform 0.3s ease-in-out;
+    }
+    
+    header p {
+      font-size: 1.3em;
+      margin-bottom: 20px;
+      line-height: 1.5;
+    }
+    
+    /* Start Quiz Button */
+    button {
+      background: #1c75cf;
+      border: none;
+      padding: 15px 30px;
+      color: white;
+      font-size: 1.5em;
+      cursor: pointer;
+      border-radius: 10px;
+      transition: background 0.3s ease, transform 0.2s ease;
+    }
+    
+    button:hover {
+      background: #15466e;
+      transform: scale(1.1); 
+    }
+    
+    button:focus {
+      outline: none;
+    }
+    
+    /* Quiz Container */
+    #quiz-container {
+      padding: 20px;
+      margin-top: 20px;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+      opacity: 0;
+      animation: fadeIn 1s ease-out forwards; 
+    }
+    
+    /* Modal Styles */
+    .modal {
+      display: none; 
+      position: fixed;
+      z-index: 1; 
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0,0,0,0.4); 
+      overflow: auto;
+      padding-top: 60px;
+    }
+    
+    .modal-content {
+      background-color: #fefefe;
+      margin: 5% auto;
+      padding: 20px;
+      border: 1px solid #888;
+      width: 80%;
+      border-radius: 10px;
+      text-align: center;
+    }
+    
+    .close-btn {
+      color: #aaa;
+      font-size: 28px;
+      font-weight: bold;
+      position: absolute;
+      top: 10px;
+      right: 25px;
+    }
+    
+    .close-btn:hover,
+    .close-btn:focus {
+      color: black;
+      text-decoration: none;
+      cursor: pointer;
+    }
+    
+    /* Footer */
+    footer {
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      padding: 10px 0;
+      background: #1E90FF;
+      text-align: center;
+      font-size: 0.9em;
+      color: white;
+      border-top: 3px solid #4682B4;
+      animation: fadeIn 1s ease-in-out 1.5s forwards; 
+    }
+    
+    
+    /* Footer text */
+    footer p {
+      margin: 0;
+    }
+    
+    /* Media Query for smaller screens */
+    @media (max-width: 600px) {
+      .option {
+        width: 90%; 
+      }
+    }
+    
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+  }
+  
+  #start-button:hover {
+    background-color: rgba(0, 0, 0, 0.7); 
+  }
+  
+
+  #quiz-container {
+    padding: 20px;
+  }
+  
