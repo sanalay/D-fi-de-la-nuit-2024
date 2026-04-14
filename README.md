@@ -1,64 +1,150 @@
-```markdown
-# Quiz Challenge
+# Défi de la Nuit 2024 — NUIT DE L'INFO
 
-Welcome to the **Quiz Challenge**! This is an interactive quiz game created as part of the **NUIT DE L'INFO** challenge. The challenge theme focuses on **The Ocean**. The app provides users with a series of questions related to this theme, offering immediate feedback on their answers.
+Ce dépôt regroupe **deux projets** nés du challenge **NUIT DE L'INFO 2024** :
 
-## NUIT DE L'INFO Challenge
+| Projet | Description | Technologie |
+|--------|-------------|-------------|
+| 🌊 **Ocean Awareness Quiz** | Quiz interactif sur la protection des océans | HTML / CSS / JavaScript |
+| 🏦 **Clustering Clients Fintech** | Segmentation automatique de clients bancaires | Python / Scikit-learn / Colab |
 
-This quiz is part of the **NUIT DE L'INFO** event, which is a global challenge where developers participate in coding marathons to build projects based on a specific theme. 
+---
 
-- **Theme**: The Ocean
-  - The quiz questions are designed to educate users about environmental issues affecting the oceans and the climate, such as rising sea levels, pollution, marine life, and the importance of preserving aquatic ecosystems.
+## 🌊 Projet 1 — Ocean Awareness Quiz
 
+Quiz à choix multiples sur les enjeux environnementaux liés aux océans, avec feedback immédiat.
 
-## Features
+### Lancer le quiz
 
-- **Multiple Choice Questions**: Users are presented with multiple-choice questions.
-- **Instant Feedback**: Upon answering, users receive immediate feedback with explanations.
-- **Custom Alerts**: Alerts are displayed with color-coded messages (success or error) for better user experience.
+Ouvrez simplement `index.html` dans votre navigateur.
 
+### Fonctionnalités
 
-## How It Works
+- Questions sur les océans et le changement climatique
+- Feedback coloré instantané (vert = correct, rouge = incorrect)
+- Design responsive mobile/desktop
 
-1. **Question Display**: The quiz presents one question at a time, with multiple choice answers.
-2. **Answer Submission**: Users select an answer and submit it.
-3. **Feedback**: Upon submission, users receive feedback:
-   - **"Correct!"** if the answer is right.
-   - **"Wrong! [Explanation]"** if the answer is incorrect, with an explanation provided.
+---
 
+## 🏦 Projet 2 — Clustering Clients Fintech
 
-## Technology Used
+Pipeline complet de **segmentation client** basé sur les comportements transactionnels.
 
-- **HTML**: For the basic structure of the quiz.
-- **CSS**: For styling the quiz and creating custom alert boxes with color-coded feedback.
-- **JavaScript**: For quiz functionality and handling user interactions.
-- **Responsive Design**: The application adapts to different screen sizes for optimal user experience on both desktop and mobile.
+### 📓 Notebook principal
 
-## How to Use
+```
+notebooks/customer_clustering.ipynb
+```
 
-1. Clone this repository:
-   ```bash
-   git clone https://github.com/your-username/quiz-challenge.git
-   ```
+### ▶️ Ouvrir sur Google Colab
 
-2. Open the `index.html` file in your browser to start the quiz.
-   
-3. Answer the questions by selecting an option. After each submission, you will receive immediate feedback.
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/sanalay/D-fi-de-la-nuit-2024/blob/main/notebooks/customer_clustering.ipynb)
 
-4. You can proceed to the next question until the quiz ends.
+### ⚡ Démarrage rapide
 
-## Example
+**Option A — Google Colab (recommandé)**
 
-Here's an example of how the quiz looks:
+1. Cliquez sur le badge « Open in Colab » ci-dessus.
+2. Dans Colab : `Exécution → Tout exécuter`.
+3. La première cellule installe les dépendances et génère les données synthétiques automatiquement.
 
-- **Question**: What is the capital of France?
-  - Option A: Berlin
-  - Option B: Madrid
-  - Option C: Paris
-  - Option D: Rome
+**Option B — En local**
 
-  **Answer**: Paris
+```bash
+# 1. Cloner le dépôt
+git clone https://github.com/sanalay/D-fi-de-la-nuit-2024.git
+cd D-fi-de-la-nuit-2024
 
-- After submission, a green alert will pop up saying "Correct!".
-- If the answer was incorrect, a red alert would display "Wrong! [Explanation]".
+# 2. Installer les dépendances
+pip install -r requirements.txt
 
+# 3. Générer les données synthétiques (si vous n'avez pas vos propres données)
+python data/generate_sample_data.py
+
+# 4. Lancer Jupyter
+jupyter notebook notebooks/customer_clustering.ipynb
+```
+
+### 📁 Structure des fichiers
+
+```
+D-fi-de-la-nuit-2024/
+│
+├── 🌊 Ocean Awareness Quiz
+│   ├── index.html          ← Point d'entrée du quiz
+│   ├── style.css           ← Styles visuels
+│   ├── script.js           ← Logique du quiz
+│   └── img/                ← Images
+│
+├── 🏦 Clustering Clients Fintech
+│   ├── notebooks/
+│   │   └── customer_clustering.ipynb   ← Notebook principal (Colab-ready)
+│   ├── data/
+│   │   ├── generate_sample_data.py     ← Génère des données synthétiques
+│   │   ├── customers.csv               ← (généré) Attributs clients
+│   │   ├── transactions.csv            ← (généré) Historique transactions
+│   │   └── customers_segmented.csv     ← (résultat) Clients avec labels
+│   └── requirements.txt               ← Dépendances Python
+│
+└── README.md
+```
+
+### 🔬 Contenu du notebook
+
+| Section | Description |
+|---------|-------------|
+| ⚙️ Configuration | Installation automatique des dépendances |
+| 📥 Chargement | Lecture et validation des données (CSV) |
+| 🔍 EDA | Distributions, tendances, corrélations |
+| 🔧 Feature Engineering | Indicateurs **RFM** + métriques comportementales |
+| 🧹 Préprocessing | Log-transform, encodage, RobustScaler |
+| 📐 PCA | Réduction dimensionnelle pour visualisation |
+| 🤖 Clustering | **K-Means**, **HDBSCAN**, **GMM** |
+| 📊 Évaluation | Silhouette, Davies-Bouldin, courbe du coude |
+| 👁️ Visualisations | Scatter 2D, heatmaps de profils, Plotly interactif |
+| 💼 Interprétation | Personas de segments + recommandations métier |
+| 💾 Export | CSV enrichi avec labels de segmentation |
+
+### 📦 Dépendances Python
+
+```
+numpy, pandas, scikit-learn, hdbscan, umap-learn,
+matplotlib, seaborn, plotly
+```
+
+Voir `requirements.txt` pour les versions exactes.
+
+### 🗄️ Brancher vos propres données
+
+Modifiez ces deux lignes dans le notebook (cellule *Configuration*) :
+
+```python
+CUSTOMERS_PATH    = Path("data/customers.csv")     # ← votre fichier clients
+TRANSACTIONS_PATH = Path("data/transactions.csv")  # ← votre fichier transactions
+```
+
+Voir `data/README.md` pour le format attendu des colonnes.
+
+### 🏁 Pistes d'amélioration futures
+
+- Ajouter **UMAP** pour une meilleure visualisation non-linéaire
+- **Grid-search** sur les hyperparamètres HDBSCAN
+- **Stabilité** des clusters par bootstrap
+- Features avancées : séries temporelles, graphe de paiements
+- Dashboard interactif avec **Streamlit** ou **Dash**
+- Connecter à une base SQL ou un fichier **Parquet**
+
+---
+
+## Technologies utilisées
+
+| Domaine | Outils |
+|---------|--------|
+| Web | HTML5, CSS3, JavaScript ES6 |
+| Data | Python 3.10+, pandas, numpy |
+| ML | scikit-learn, HDBSCAN |
+| Visualisation | matplotlib, seaborn, plotly |
+| Environnement | Google Colab, Jupyter |
+
+## Licence
+
+Projet éducatif réalisé dans le cadre de la **NUIT DE L'INFO 2024**.
