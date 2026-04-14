@@ -60,7 +60,7 @@ def generate_customers(n: int = N_CUSTOMERS) -> pd.DataFrame:
         "account_type":   rng.choice(ACCOUNT_TYPES, size=n, p=[0.6, 0.25, 0.15]),
         "tenure_days":    tenure_days,
         "avg_balance":    np.round(balances, 2),
-        "registration_date": pd.date_range(start="2019-01-01", periods=n, freq="12h")[:n],
+        "registration_date": pd.date_range(start="2019-01-01", periods=n, freq="12h"),
     })
     return customers
 
